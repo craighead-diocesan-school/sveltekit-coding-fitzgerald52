@@ -3,20 +3,25 @@
   USD = Number(USD)
   let NZD = ''
   NZD = Number(NZD)
+  const convrate = 1.63
+  // button that changes value from input using maths
   function changer() {
-    NZD = 1.63 * USD
+    NZD = convrate * USD
   }
 </script>
 
 <main>
   <label for="USD">
+    <!-- links the input the the variable  -->
     <input bind:value={USD} placeholder="Enter USD " />
   </label>
+  <!-- completes the function when the button is clicked  -->
   <button on:click={changer}> convert </button>
   <p>{NZD}</p>
 </main>
 
 <style>
+  /* styles the buttons  */
   button {
     width: 10rem;
     height: 10rem;
